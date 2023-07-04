@@ -1,0 +1,163 @@
+@font-face {
+  font-family: iranyekanwebmedium;
+  src: url(../../font/iranyekanwebmedium.woff);
+}
+@font-face {
+  font-family: YekanBakhHeavy;
+  src: url(../../font/YekanBakhHeavy.woff);
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: iranyekanwebmedium;
+}
+
+.header {
+  width: 100ve;
+  height: 100vh;
+}
+
+header .top-header {
+  background: linear-gradient(-45deg, #a5247a, #ec008c, #a5247a);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 11px 0px 11px;
+}
+header .top-header div:first-child {
+  display: flex;
+  align-items: center;
+}
+header .top-header div:first-child a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.6rem;
+  display: block;
+  margin-bottom: -10px;
+  cursor: pointer;
+  padding: 4px 12px;
+}
+header .top-header div:first-child a:first-child {
+  color: #111;
+  background-color: #f9f8f8;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-left: 10px;
+}
+header .top-header div:last-child {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 8px;
+}
+header .top-header div:last-child a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.7rem;
+  padding: 0 5px 0 0;
+}
+header .top-header div:last-child svg {
+  width: 1.8rem;
+  color: #fff;
+  border-left: 1px solid #fff;
+  padding: 0 0 0 5px;
+  cursor: pointer;
+}
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 11px 0px 11px;
+  background-color: #f9f8f8;
+  box-shadow: 4px 4px 18px rgba(182, 174, 182, 0.4);
+  position: sticky;
+  top: 0;
+}
+header nav svg {
+  width: 2rem;
+  color: #a5247a;
+  filter: drop-shadow(1px 1px 1px #a5247a);
+  cursor: pointer;
+}
+header nav img {
+  width: 3.5rem;
+  cursor: pointer;
+}
+
+.trabord-rightel {
+  display: none;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+  nav {
+    flex-direction: row-reverse;
+  }
+  nav .rightel-logo img {
+    width: 5rem;
+  }
+  nav h3 {
+    background-color: rgb(182, 209, 63);
+    padding: 8px 8px;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: rgb(107, 90, 90);
+    cursor: pointer;
+  }
+  nav h3:hover {
+    background-color: rgb(186, 222, 28);
+    color: #ec008c;
+    transition: all 0.15s;
+  }
+  nav div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav .nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+  nav .nav ul a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: rgb(96, 93, 125);
+    font-family: YekanBakhHeavy;
+    margin-right: 12px;
+  }
+  nav .nav ul a:hover {
+    color: #a5247a;
+    transition: all 0.2s;
+  }
+}
+@media (min-width: 968px) {
+  header .top-header {
+    justify-content: space-around;
+  }
+  header .top-header div:first-child a {
+    font-size: 0.7rem;
+    padding: 8px 18px;
+    font-size: 0.75rem;
+  }
+  header nav h3 {
+    margin-left: 6rem;
+  }
+  header nav .nav a {
+    font-size: 0.95rem;
+    margin-right: 0.22rem;
+    padding: 6px 12px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
