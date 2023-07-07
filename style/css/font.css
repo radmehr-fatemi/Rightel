@@ -6,5 +6,9 @@
   font-family: YekanBakhHeavy;
   src: url(../../font/YekanBakhHeavy.woff);
 }
+@font-face {
+  font-family: iranyekanwebregular;
+  src: url(../../font/iranyekanwebregular.woff);
+}
 
 /*# sourceMappingURL=font.css.map */

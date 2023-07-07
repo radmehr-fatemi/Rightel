@@ -6,157 +6,223 @@
   font-family: YekanBakhHeavy;
   src: url(../../font/YekanBakhHeavy.woff);
 }
+@font-face {
+  font-family: iranyekanwebregular;
+  src: url(../../font/iranyekanwebregular.woff);
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 0.09s;
 }
 
 body {
-  font-family: iranyekanwebmedium;
+  font-family: YekanBakhHeavy;
+  position: relative;
 }
 
-.header {
-  width: 100ve;
-  height: 100vh;
-}
-
-header .top-header {
-  background: linear-gradient(-45deg, #a5247a, #ec008c, #a5247a);
+.top-header {
+  width: 100vw;
+  height: 2.5rem;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 11px 0px 11px;
+  align-items: flex-end;
+  padding: 0 1rem;
+  background: linear-gradient(-45deg, #a5247a, #ec008c, #a5247a);
 }
-header .top-header div:first-child {
-  display: flex;
-  align-items: center;
-}
-header .top-header div:first-child a {
+.top-header div:first-child a {
   text-decoration: none;
   color: #fff;
-  font-size: 0.6rem;
-  display: block;
-  margin-bottom: -10px;
+  padding: 0.2rem 0.3rem 0.2rem 0.3rem;
   cursor: pointer;
-  padding: 4px 12px;
-}
-header .top-header div:first-child a:first-child {
-  color: #111;
-  background-color: #f9f8f8;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  margin-left: 10px;
+  display: inline-block;
+  font-size: 0.76rem;
 }
-header .top-header div:last-child {
+.top-header div:first-child a:first-child {
+  color: #444;
+  background-color: #ece8e9;
+}
+.top-header div:last-child {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
-  margin-bottom: 8px;
+  align-content: center;
+  justify-content: center;
+  margin: auto 0;
 }
-header .top-header div:last-child a {
-  text-decoration: none;
+.top-header div:last-child svg {
+  width: 2.2rem;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.7rem;
-  padding: 0 5px 0 0;
-}
-header .top-header div:last-child svg {
-  width: 1.8rem;
-  color: #fff;
-  border-left: 1px solid #fff;
-  padding: 0 0 0 5px;
+  padding-left: 0.5rem;
   cursor: pointer;
 }
-header nav {
-  width: 100%;
+.top-header div:last-child a {
+  text-decoration: none;
+  padding-right: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  border-right: 1px solid rgb(216, 192, 221);
+}
+
+header {
+  width: 100vw;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
-  align-content: center;
-  padding: 1rem 11px 0px 11px;
-  background-color: #f9f8f8;
-  box-shadow: 4px 4px 18px rgba(182, 174, 182, 0.4);
-  position: sticky;
-  top: 0;
+  align-items: center;
+  background-color: #ece8e9;
+  padding: 1rem;
 }
-header nav svg {
-  width: 2rem;
+header #hamburger-menu {
+  width: 2.2rem;
   color: #a5247a;
-  filter: drop-shadow(1px 1px 1px #a5247a);
+  display: block;
   cursor: pointer;
 }
-header nav img {
-  width: 3.5rem;
+header #hamburger-menu:hover {
+  filter: drop-shadow(2px 2px 11px #ec008c);
+}
+header img {
+  display: block;
+  width: 4rem;
   cursor: pointer;
 }
 
-.trabord-rightel {
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
   display: none;
 }
+nav ul li {
+  margin-right: 0.9rem;
+}
+nav ul a {
+  text-decoration: none;
+  color: #555;
+  font-size: 1.2rem;
+}
+nav ul a:hover {
+  color: #a5247a;
+  transition: all 0.3s;
+}
 
-.nav {
+#trabord, .hamberger-menu a {
+  display: block;
+  padding: 0.5rem 0.4rem;
+  background-color: rgb(198, 235, 130);
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
   display: none;
+}
+#trabord:hover, .hamberger-menu a:hover {
+  background-color: rgb(206, 243, 137);
+  color: #ec008c;
+  transition: all 0.3s;
+}
+
+.hamberger-menu {
+  width: 50vw;
+  height: 100vh;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+}
+.hamberger-menu img {
+  cursor: pointer;
+}
+.hamberger-menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid rgb(173, 173, 173);
+}
+.hamberger-menu ul svg {
+  width: 10011px;
+}
+.hamberger-menu li {
+  margin-top: 0.6rem;
+  border-bottom: 1px solid rgb(231, 231, 231);
+  font-size: 0.8rem;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+.hamberger-menu li svg {
+  width: 1rem;
+}
+.hamberger-menu li:hover {
+  color: #a5247a;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.hamberger-menu a {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 0.4rem 4rem;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 768px) {
-  .hamburger-menu {
+  .top-header {
+    height: 3rem;
+  }
+  .top-header div:first-child a {
+    font-size: 0.9rem;
+  }
+  .top-header div:last-child a {
+    font-size: 1rem;
+  }
+  header {
+    flex-direction: row-reverse;
+    height: 4rem;
+  }
+  header div:first-child #hamburger-menu {
     display: none;
   }
-  nav {
-    flex-direction: row-reverse;
+  header #trabord, header .hamberger-menu a, .hamberger-menu header a {
+    display: block;
   }
-  nav .rightel-logo img {
+  nav img {
     width: 5rem;
   }
-  nav h3 {
-    background-color: rgb(182, 209, 63);
-    padding: 8px 8px;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: rgb(107, 90, 90);
-    cursor: pointer;
-  }
-  nav h3:hover {
-    background-color: rgb(186, 222, 28);
-    color: #ec008c;
-    transition: all 0.15s;
-  }
-  nav div:last-child {
+  nav ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
   }
-  nav .nav ul {
-    display: flex;
-    list-style-type: none;
-  }
-  nav .nav ul a {
-    text-decoration: none;
-    font-size: 0.8rem;
-    color: rgb(96, 93, 125);
-    font-family: YekanBakhHeavy;
-    margin-right: 12px;
-  }
-  nav .nav ul a:hover {
-    color: #a5247a;
-    transition: all 0.2s;
+  nav ul a {
+    font-size: 0.9rem;
   }
 }
 @media (min-width: 968px) {
-  header .top-header {
+  .top-header {
     justify-content: space-around;
   }
-  header .top-header div:first-child a {
-    font-size: 0.7rem;
-    padding: 8px 18px;
-    font-size: 0.75rem;
+  #trabord, .hamberger-menu a {
+    margin-left: 9rem;
   }
-  header nav h3 {
+  nav img {
+    width: 5rem;
     margin-left: 6rem;
   }
-  header nav .nav a {
-    font-size: 0.95rem;
-    margin-right: 0.22rem;
-    padding: 6px 12px;
+  nav a {
+    font-size: 0.93rem;
   }
 }
 
