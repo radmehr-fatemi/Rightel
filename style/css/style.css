@@ -345,20 +345,20 @@ main {
   text-align: center;
   cursor: pointer;
 }
+.main-slider-second .slider-second:hover a {
+  color: rgb(145, 12, 138);
+}
+.main-slider-second .slider-second:hover svg {
+  color: rgb(148, 13, 141);
+}
 .main-slider-second .slider-second svg {
   width: 4rem;
   color: #ec008c;
-}
-.main-slider-second .slider-second svg:hover {
-  color: rgb(66, 6, 63);
 }
 .main-slider-second .slider-second a {
   text-decoration: none;
   color: #ec008c;
   font-size: 0.8rem;
-}
-.main-slider-second .slider-second a:hover {
-  color: rgb(66, 6, 63);
 }
 
 .main-slider-second-query {
@@ -380,6 +380,13 @@ main {
   align-items: center;
   text-align: center;
   margin-left: 4rem;
+  cursor: pointer;
+}
+.main-slider-second-query li:hover a {
+  color: rgb(145, 12, 138);
+}
+.main-slider-second-query li:hover svg {
+  color: rgb(148, 13, 141);
 }
 .main-slider-second-query a {
   text-decoration: none;

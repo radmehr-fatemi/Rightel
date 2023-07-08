@@ -403,24 +403,23 @@ main {
         align-items: center;
         text-align: center;
         cursor: pointer;
-
+        &:hover {
+            a {
+                color:rgb(145, 12, 138) ;
+            }
+            svg {
+                color:rgb(148, 13, 141) ;
+            }
+        }
         svg {
             width: 4rem;
             color: #ec008c;
-
-            &:hover {
-                color: rgb(66, 6, 63);
-            }
         }
 
         a {
             text-decoration: none;
             color: #ec008c;
             font-size: .8rem;
-
-            &:hover {
-                color: rgb(66, 6, 63);
-            }
         }
     }
 }
@@ -445,15 +444,26 @@ main {
         text-align: center;
         margin-left: 4rem;
         // width: 8rem;
+        cursor: pointer;
+        &:hover {
+            a {
+                color:rgb(145, 12, 138) ;
+            }
+            svg {
+                color:rgb(148, 13, 141) ;
+            }
+        }
     }
     a {
         text-decoration: none;
         color: #ec008c;
         font-size: .9rem;
+      
     }
     svg {
         width: 4rem;
         color: #ec008c;
+      
     }
 }
 
