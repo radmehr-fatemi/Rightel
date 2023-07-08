@@ -3,7 +3,7 @@ const hambergerList = document.querySelector(".hamburger-list");
 const logoImage = document.querySelector("nav img");
 const usedark = document.querySelector(".use-dark");
 const navLi = document.querySelectorAll("nav ul > li");
-
+// -------------Hamburger-Menu-----------------
 hamburgerMenu.addEventListener("click", e => {
     if (hamburgerMenu.classList.contains("cros-show")) {
         hamburgerMenu.classList.remove("cros-show");
@@ -29,7 +29,7 @@ hamburgerMenu.addEventListener("click", e => {
     }
  
 })
-
+// --------------------Hamburger-List---------------
 hambergerList.addEventListener("click" , event => {
     const li = event.target;
     const showUl = li.nextSibling.nextSibling;
@@ -43,14 +43,13 @@ hambergerList.addEventListener("click" , event => {
     }
     
 })
-
+// ----------------------Absolute-Nave-------------
 navLi.forEach(item => {
     item.addEventListener("mouseenter" ,e => {
         const absoluteNav = item.children[1];
         absoluteNav.style.display = "flex";
         absoluteNav.style.animation = " Show-nav .7s forwards";
-
-      
+        console.log(absoluteNav)
     })
 })
 navLi.forEach(item => {
@@ -60,3 +59,32 @@ navLi.forEach(item => {
         absoluteNav.style.display = "none";
     })
 })
+
+// ---------------swiperOne----------
+var swiperOne = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+    // ---------------swiperTwo----------
+    var swiperTwo = new Swiper(".mySwiperTwo", {
+        slidesPerView: 4,
+        // centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
