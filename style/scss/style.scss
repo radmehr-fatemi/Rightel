@@ -115,7 +115,7 @@ nav {
 
 
         li {
-            margin-right: .9rem;
+            margin-right: .6rem;
         }
 
         a {
@@ -162,12 +162,13 @@ nav {
     font-size: .9rem;
     color: #555;
     padding: .9rem;
-    // display: none;
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
+    // z-index: -1;
+    display: none;
     opacity: 0;
-    z-index: -1;
 
     li {
+        list-style-type: none;
         margin-right: 2.5rem;
         cursor: pointer;
 
@@ -177,30 +178,23 @@ nav {
         }
     }
 }
-.absolute-nav-show {
-    animation: Show-nav .7s forwards;
-    @keyframes Show-nav {
+
+@keyframes Show-nav {
+    0% {
+        opacity: 0;
+}
+    100% {
+        opacity: 1;
+}
+}
+    @keyframes UnShow-nav {
         0% {
-            opacity: 0;
-        //    transform: translateY(-100%);
-}
-        100% {
             opacity: 1;
-            transform: translateY(0);
-}
+        }
+        100% {
+            opacity: 0;
+        }
     }
-}
-// .absolute-nav-unshow {
-//     animation: UnShow-nav 1s forwards;
-//     @keyframes UnShow-nav {
-//         0% {
-//             opacity: 1;
-//         }
-//         100% {
-//             opacity: 0;
-//         }
-//     }
-// }
 // --------------------Hamburger-List------------
 .hamburger-list {
     width: 50vw;
@@ -398,7 +392,7 @@ nav {
     }
     // --------header----
     #trabord {
-        margin-left: 9rem;
+        margin-left: 7rem;
     }
     // --------nav-------
         nav {
@@ -407,8 +401,16 @@ nav {
                 margin-left: 6rem;
             }
 
+            ul {
+                
+            li {
+                margin-right: .8rem;
+            }
+            }
+
             a {
                 font-size: .93rem;
             }
+
         }
 }

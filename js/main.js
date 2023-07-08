@@ -2,7 +2,7 @@ const hamburgerMenu = document.querySelector("#hamburger-menu");
 const hambergerList = document.querySelector(".hamburger-list");
 const logoImage = document.querySelector("nav img");
 const usedark = document.querySelector(".use-dark");
-const navLi = document.querySelector("nav ul li");
+const navLi = document.querySelectorAll("nav ul > li");
 
 hamburgerMenu.addEventListener("click", e => {
     if (hamburgerMenu.classList.contains("cros-show")) {
@@ -44,16 +44,19 @@ hambergerList.addEventListener("click" , event => {
     
 })
 
-navLi.addEventListener("mouseenter" ,e => {
-    const absoluteNavr = e.target.children[1];
-    // absoluteNavr.classList.add("absolute-nav-show");
-    // absoluteNavr.classList.remove("absolute-nav-unshow");
-    console.log(e.target)
+navLi.forEach(item => {
+    item.addEventListener("mouseenter" ,e => {
+        const absoluteNav = item.children[1];
+        absoluteNav.style.display = "flex";
+        absoluteNav.style.animation = " Show-nav .7s forwards";
 
+      
+    })
 })
-// navLi.addEventListener("mouseleave" ,e => {
-//     const absoluteNavr = e.target.children[1];
-//     console.log(absoluteNavr)
-//     absoluteNavr.classList.remove("absolute-nav-show");
-//     // absoluteNavr.classList.add("absolute-nav-unshow");
-// })
+navLi.forEach(item => {
+    item.addEventListener("mouseleave" ,e => {
+        const absoluteNav = item.children[1];
+        absoluteNav.style.animation  = "UnShow-nav .7s forwards"
+        absoluteNav.style.display = "none";
+    })
+})
