@@ -74,6 +74,8 @@ header {
   align-items: center;
   background-color: #ece8e9;
   padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 header #hamburger-menu {
   width: 2.2rem;
@@ -82,7 +84,9 @@ header #hamburger-menu {
   cursor: pointer;
 }
 header #hamburger-menu:hover {
-  filter: drop-shadow(2px 2px 11px #ec008c);
+  filter: drop-shadow(2px 2px 2px #a5247a);
+  width: 2.3rem;
+  transition: all 0.3s;
 }
 header img {
   display: block;
@@ -93,6 +97,7 @@ header img {
 nav {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 nav ul {
   display: flex;
@@ -108,13 +113,14 @@ nav ul a {
   text-decoration: none;
   color: #555;
   font-size: 1.2rem;
+  display: block;
 }
 nav ul a:hover {
   color: #a5247a;
   transition: all 0.3s;
 }
 
-#trabord, .hamberger-menu a {
+#trabord, .hamburger-list a {
   display: block;
   padding: 0.5rem 0.4rem;
   background-color: rgb(198, 235, 130);
@@ -125,13 +131,50 @@ nav ul a:hover {
   cursor: pointer;
   display: none;
 }
-#trabord:hover, .hamberger-menu a:hover {
+#trabord:hover, .hamburger-list a:hover {
   background-color: rgb(206, 243, 137);
   color: #ec008c;
   transition: all 0.3s;
 }
 
-.hamberger-menu {
+.absolute-nav {
+  position: absolute;
+  top: 3.3rem;
+  left: 0;
+  right: 0;
+  width: 90vw;
+  background-color: #f6f6f6;
+  justify-content: flex-start;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 0.9rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: -1;
+}
+.absolute-nav li {
+  margin-right: 2.5rem;
+  cursor: pointer;
+}
+.absolute-nav li:hover {
+  color: #a5247a;
+  transition: all 0.3s;
+}
+
+.absolute-nav-show {
+  animation: Show-nav 0.7s forwards;
+}
+@keyframes Show-nav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hamburger-list {
   width: 50vw;
   height: 100vh;
   background-color: #fff;
@@ -142,21 +185,21 @@ nav ul a:hover {
   flex-direction: column;
   align-items: center;
   padding: 0 1rem;
+  transform: translateX(100%);
+  filter: brightness(100%);
 }
-.hamberger-menu img {
+.hamburger-list img {
   cursor: pointer;
+  width: 6.2rem;
 }
-.hamberger-menu ul {
+.hamburger-list ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
   width: 100%;
   border-top: 1px solid rgb(173, 173, 173);
 }
-.hamberger-menu ul svg {
-  width: 10011px;
-}
-.hamberger-menu li {
+.hamburger-list li {
   margin-top: 0.6rem;
   border-bottom: 1px solid rgb(231, 231, 231);
   font-size: 0.8rem;
@@ -164,20 +207,97 @@ nav ul a:hover {
   display: flex;
   justify-content: space-between;
 }
-.hamberger-menu li svg {
+.hamburger-list li svg {
   width: 1rem;
 }
-.hamberger-menu li:hover {
+.hamburger-list li:hover {
   color: #a5247a;
   cursor: pointer;
   transition: all 0.3s;
 }
-.hamberger-menu a {
+.hamburger-list a {
   display: block;
   margin: 1rem auto;
   text-align: center;
   padding: 0.4rem 4rem;
   font-size: 0.8rem;
+}
+.hamburger-list .absolute-rightel {
+  background-color: #f7f4f4;
+  display: none;
+}
+.hamburger-list .absolute-rightel li {
+  border-bottom: 1px solid rgb(216, 213, 213);
+  font-size: 0.77rem;
+}
+.hamburger-list .off-on-absolute-rightel {
+  display: flex;
+}
+
+#hamburger-menu {
+  z-index: 101;
+}
+
+#hamburger-show {
+  animation: Show 0.5s forwards;
+}
+@keyframes Show {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#hamburger-unshow {
+  animation: Show2 0.5s forwards;
+}
+@keyframes Show2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.cros-show {
+  animation: Show3 0.6s forwards;
+}
+@keyframes Show3 {
+  0% {
+    transform: translateX(0);
+    color: #a5247a;
+  }
+  100% {
+    transform: translateX(-50vw);
+    color: #555;
+  }
+}
+
+.cros-ushow {
+  animation: Show4 0.6s forwards;
+}
+@keyframes Show4 {
+  0% {
+    transform: translateX(-50vw);
+    color: #555;
+  }
+  100% {
+    transform: translateX(0);
+    color: #a5247a;
+  }
+}
+
+.use-dark {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(6, 0, 7, 0.555);
+  display: none;
 }
 
 @media (min-width: 768px) {
@@ -197,7 +317,7 @@ nav ul a:hover {
   header div:first-child #hamburger-menu {
     display: none;
   }
-  header #trabord, header .hamberger-menu a, .hamberger-menu header a {
+  header #trabord, header .hamburger-list a, .hamburger-list header a {
     display: block;
   }
   nav img {
@@ -214,7 +334,7 @@ nav ul a:hover {
   .top-header {
     justify-content: space-around;
   }
-  #trabord, .hamberger-menu a {
+  #trabord, .hamburger-list a {
     margin-left: 9rem;
   }
   nav img {

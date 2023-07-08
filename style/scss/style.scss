@@ -13,6 +13,7 @@ body {
     font-family: YekanBakhHeavy;
     // font-family: iranyekanwebregular;
     position: relative;
+
 }
 
 // -------------------TOP-Header-------------
@@ -77,14 +78,18 @@ header {
     align-items: center;
     background-color: $color1;
     padding: 1rem;
-
+    position: sticky;
+    top: 0;
+// --------------------Hamburger-Menu-----------
     #hamburger-menu {
         width: 2.2rem;
         color: #a5247a;
         display: block;
         cursor: pointer;
         &:hover {
-            filter: drop-shadow(2px 2px 11px #ec008c);
+            filter: drop-shadow(2px 2px 2px #a5247a);
+            width: 2.3rem;
+            transition: all .3s;
         }
 }
 
@@ -99,6 +104,7 @@ header {
 nav {
     display: flex;
     justify-content: center;
+    position: relative;
 
     ul {
         display: flex;
@@ -106,6 +112,7 @@ nav {
         align-items: center;
         list-style-type: none;
         display: none;
+
 
         li {
             margin-right: .9rem;
@@ -115,6 +122,7 @@ nav {
             text-decoration: none;
             color: #555;
             font-size: 1.2rem;
+            display: block;
 
             &:hover {
                 color: #a5247a;
@@ -141,8 +149,60 @@ nav {
         transition: all .3s;
     }
 }
-// --------------------Hamberger-menu------------
-.hamberger-menu {
+// -----Absolute-Nav-----
+.absolute-nav {
+    position: absolute;
+    top: 3.3rem;
+    left: 0;
+    right: 0;
+    width: 90vw;
+    background-color: #f6f6f6;
+    // display: flex;
+    justify-content: flex-start;
+    font-size: .9rem;
+    color: #555;
+    padding: .9rem;
+    // display: none;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: -1;
+
+    li {
+        margin-right: 2.5rem;
+        cursor: pointer;
+
+        &:hover {
+            color: #a5247a;
+            transition: all .3s;
+        }
+    }
+}
+.absolute-nav-show {
+    animation: Show-nav .7s forwards;
+    @keyframes Show-nav {
+        0% {
+            opacity: 0;
+        //    transform: translateY(-100%);
+}
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+}
+    }
+}
+// .absolute-nav-unshow {
+//     animation: UnShow-nav 1s forwards;
+//     @keyframes UnShow-nav {
+//         0% {
+//             opacity: 1;
+//         }
+//         100% {
+//             opacity: 0;
+//         }
+//     }
+// }
+// --------------------Hamburger-List------------
+.hamburger-list {
     width: 50vw;
     height: 100vh;
     background-color: #fff;
@@ -153,8 +213,11 @@ nav {
     flex-direction: column;
     align-items: center;
     padding: 0 1rem;
+    transform: translateX(100%);
+    filter: brightness(100%);
     img {
         cursor: pointer;
+        width: 6.2rem;
     }
     ul {
         list-style-type: none;
@@ -162,11 +225,7 @@ nav {
         flex-direction: column;
         width: 100%;
         border-top: 1px solid rgb(173, 173, 173);
-        
-        svg {
-            width: 10011px;
-           
-        }
+   
     }
     li {
         margin-top: .6rem;
@@ -194,7 +253,85 @@ nav {
         padding: .4rem 4rem;
         font-size: .8rem;
     }
- 
+
+    .absolute-rightel {
+        background-color: #f7f4f4;
+        display: none;
+
+        li {
+            border-bottom: 1px solid rgb(216, 213, 213);
+            font-size: .77rem;
+        }
+    }
+    
+    .off-on-absolute-rightel {
+        display: flex;
+    }
+
+}
+#hamburger-menu {
+    z-index: 101;
+    // transform: translateX(-600%);
+}
+
+#hamburger-show {
+    animation: Show .5s forwards;
+    @keyframes Show {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+}
+#hamburger-unshow {
+    animation: Show2 .5s forwards ;
+    @keyframes Show2 {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(100%);
+        }
+    }    
+}
+.cros-show {
+    animation: Show3 .6s forwards;
+    @keyframes Show3 {
+        0% {
+            transform: translateX(0);
+            color: #a5247a;
+        }
+        100% {
+            transform: translateX(-50vw);
+            color: #555;
+        }
+    }
+}
+.cros-ushow {
+    animation: Show4 .6s forwards;
+    @keyframes Show4 {
+        0% {
+            transform: translateX(-50vw);
+            color: #555;
+        }
+        100% {
+            transform: translateX(0);
+            color: #a5247a;
+        }
+    }
+}
+// --------------Use-dark-----------
+.use-dark {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(6, 0, 7, 0.555);
+    // z-index: 1000;
+    display: none;
 }
 
 // -------------------------RESPONSIVE-------------------------
