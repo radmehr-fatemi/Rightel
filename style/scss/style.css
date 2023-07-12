@@ -325,7 +325,8 @@ main {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main-slider-second {
@@ -333,11 +334,13 @@ main {
   height: 25vh;
   padding: 4rem 0;
   box-shadow: 0px 4px 3px #ece8e9;
+  position: relative;
 }
 .main-slider-second .swiperTwo mySwiperTwo {
   background-color: #a5247a;
 }
 .main-slider-second .slider-second {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -398,6 +401,271 @@ main {
   color: #ec008c;
 }
 
+.cards {
+  width: 100%;
+  padding: 2.5rem;
+}
+.cards .top-cards {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.cards .top-cards p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.cards .top-cards span {
+  padding: 0 8px;
+  color: #a5247a;
+}
+.cards .top-cards a {
+  text-decoration: none;
+  color: #979696;
+  padding: 0px 1.5rem;
+  border-right: 1px solid #666;
+}
+.cards .card-grid {
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.cards .card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: black;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.cards .card div:first-child {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.cards .card div:first-child img {
+  height: 100%;
+  width: 100%;
+}
+.cards .card .card-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  z-index: 1;
+  background-color: #a5247a;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.cards .card .card-text p {
+  color: #fff;
+}
+.cards .card .card-hover {
+  position: absolute;
+  background-color: rgba(5, 0, 3, 0.6431372549);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  display: none;
+  animation: Card-hover 0.5s forwards;
+}
+.cards .card .card-hover p {
+  width: 77%;
+  color: #fff;
+}
+@keyframes Card-hover {
+  0% {
+    background: none;
+  }
+  100% {
+    background-color: rgba(5, 0, 3, 0.6431372549);
+  }
+}
+
+@keyframes Card-img {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+.sazemandehi {
+  width: 100%;
+}
+.sazemandehi img {
+  width: 100%;
+}
+
+.my-rightel {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.my-rightel div:first-child {
+  width: 100%;
+  text-align: center;
+}
+.my-rightel div:first-child p {
+  font-size: 1.5rem;
+}
+.my-rightel .my-rightel-link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid #cbc7c7;
+}
+.my-rightel .my-rightel-link a {
+  text-decoration: none;
+  color: #666;
+  padding: 8px 6rem;
+  margin-left: 4px;
+}
+.my-rightel .my-rightel-link a:hover {
+  color: #a5247a;
+  border-bottom: 2px solid #a5247a;
+}
+.my-rightel .my-rightel-link a:first-child {
+  color: #a5247a;
+  border-bottom: 2px solid #a5247a;
+}
+.my-rightel .my-rightel-mobile {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.my-rightel .my-rightel-mobile div:first-child ul {
+  height: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.my-rightel .my-rightel-mobile div:first-child svg {
+  width: 5rem;
+  background-color: #fff;
+  padding: 0.8rem;
+  border-radius: 50%;
+  border: 4px solid #dfdbdc;
+  color: #ec008c;
+}
+.my-rightel .my-rightel-mobile div:first-child svg:hover {
+  filter: drop-shadow(1px 1px 5px #7b7a7a);
+  transition: all 0.3s;
+}
+.my-rightel .my-rightel-mobile div:first-child li {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-rightel .my-rightel-mobile div:first-child a {
+  text-decoration: none;
+  color: #666;
+  margin-right: 1rem;
+}
+.my-rightel .download-mobile {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+}
+.my-rightel .download-mobile a {
+  width: 80%;
+  display: block;
+  background-color: rgb(172, 225, 93);
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff !important;
+}
+.my-rightel .download-mobile a:hover {
+  background-color: #a5247a;
+  transition: all 0.2s;
+}
+
+.my-rightel-mobile-image {
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+.my-rightel-mobile-image img {
+  width: 80%;
+  height: 80%;
+}
+
+.dast-dooz-banner {
+  width: 100%;
+}
+.dast-dooz-banner img {
+  width: 100%;
+}
+
+.main-slider-third {
+  margin: auto;
+  width: 100%;
+}
+.main-slider-third .main-slider-third-i {
+  width: 100%;
+  text-align: center;
+}
+.main-slider-third .main-slider-third-i svg {
+  width: 3.5rem;
+  color: #555;
+}
+.main-slider-third .mySwiperThird-text {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+.main-slider-third .mySwiperThird-text h6 {
+  font-size: 0.8rem;
+}
+.main-slider-third .mySwiperThird-text a {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.3rem;
+}
+.main-slider-third .mySwiperThird-text a:hover {
+  color: #a5247a;
+  transition: all 0.3s;
+}
+.main-slider-third .mySwiperThird-text p {
+  font-size: 1rem;
+  color: #7b7a7a;
+  padding: 1rem;
+}
+.main-slider-third .swiper-button-next, .main-slider-third .swiper-button-prev {
+  color: #cbc7c7;
+  font-weight: 900;
+  display: none;
+}
 @media (min-width: 768px) {
   .top-header {
     height: 3rem;
@@ -433,12 +701,49 @@ main {
     padding: 2rem 0;
     height: 60vh;
   }
+  .main-slider-second {
+    height: 20vh;
+    padding: 2rem 0;
+  }
+  .cards .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cards .card-grid .div:first-child {
+    border-radius: 8px;
+    display: none;
+  }
+  .cards .card-grid .card-text {
+    position: absolute;
+    top: 60%;
+    height: 40%;
+    background-color: rgba(165, 36, 122, 0.8862745098);
+  }
+  .cards .card {
+    border-radius: 1rem;
+  }
+  .cards .card img {
+    border-radius: 0.8rem;
+  }
+  .my-rightel .my-rightel-mobile {
+    flex-direction: row-reverse;
+  }
+  .my-rightel .my-rightel-mobile div:first-child {
+    width: 50%;
+  }
+  .my-rightel .my-rightel-mobile .my-rightel-mobile-image {
+    display: flex;
+    justify-content: center;
+  }
+  .my-rightel .my-rightel-mobile .my-rightel-mobile-image img {
+    width: 40%;
+  }
+  .main-slider-third {
+    width: 70%;
+  }
+  .main-slider-third .swiper-button-next, .main-slider-third .swiper-button-prev {
+    display: block;
+  }
 }
-.main-slider-second {
-  height: 20vh;
-  padding: 2rem 0;
-}
-
 @media (min-width: 968px) {
   .top-header {
     justify-content: space-around;
@@ -465,6 +770,16 @@ main {
   .main-slider-second-query {
     display: flex;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+  .cards .card-grid {
+    grid-template-columns: repeat(3, 380px);
+    justify-content: center;
+  }
+  .cards .card-grid .card-text {
+    top: 80%;
+    height: 20%;
+    background-color: rgba(165, 36, 122, 0.8039215686);
+  }
+  .cards .card-hover p {
+    font-size: 1.2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

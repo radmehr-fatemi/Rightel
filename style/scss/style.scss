@@ -389,28 +389,33 @@ main {
     height: 25vh;
     padding: 4rem 0;
     box-shadow: 0px 4px 3px #ece8e9;
+    position: relative;
 
     .swiperTwo mySwiperTwo {
         background-color: #a5247a;
     }
 
-    .swiper-wrapper {}
+    // .swiper-wrapper {}
 
     .slider-second {
+        position: absolute;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
         cursor: pointer;
+
         &:hover {
             a {
-                color:rgb(145, 12, 138) ;
+                color: rgb(145, 12, 138);
             }
+
             svg {
-                color:rgb(148, 13, 141) ;
+                color: rgb(148, 13, 141);
             }
         }
+
         svg {
             width: 4rem;
             color: #ec008c;
@@ -423,6 +428,7 @@ main {
         }
     }
 }
+
 // -----------main-slider-second-query--------
 .main-slider-second-query {
     width: 100%;
@@ -430,13 +436,14 @@ main {
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
-    box-shadow: 0px 2px 3px #ece8e9 ;
+    box-shadow: 0px 2px 3px #ece8e9;
     display: none;
-    
+
     ul {
         list-style-type: none;
         display: flex;
     }
+
     li {
         display: flex;
         flex-direction: column;
@@ -445,25 +452,355 @@ main {
         margin-left: 4rem;
         // width: 8rem;
         cursor: pointer;
+
         &:hover {
             a {
-                color:rgb(145, 12, 138) ;
+                color: rgb(145, 12, 138);
             }
+
             svg {
-                color:rgb(148, 13, 141) ;
+                color: rgb(148, 13, 141);
             }
         }
     }
+
     a {
         text-decoration: none;
         color: #ec008c;
         font-size: .9rem;
-      
+
     }
+
     svg {
         width: 4rem;
         color: #ec008c;
-      
+
+    }
+}
+
+// ---------------------Cards-------------------
+.cards {
+    width: 100%;
+    padding: 2.5rem;
+
+    // --------------top-cards------------
+    .top-cards {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+
+        p {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        span {
+            padding: 0 8px;
+            color: #a5247a;
+            // border-left: 1px solid #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #979696;
+            padding: 0px 1.5rem;
+            border-right: 1px solid #666;
+        }
+    }
+
+    // -----------------Card-grid----------------
+    .card-grid {
+        width: 100%;
+        padding: 1rem;
+        display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .card {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background-color: black;
+        border-radius: 8px;
+        cursor: pointer;
+
+
+        div:first-child {
+            width: fit-content;
+            height: fit-content;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .card-text {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            z-index: 1;
+            background-color: #a5247a;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+
+            p {
+                color: #fff;
+            }
+        }
+
+        .card-hover {
+            position: absolute;
+            background-color: #050003a4;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            display: none;
+
+            p {
+                width: 77%;
+                color: #fff;
+            }
+
+            animation: Card-hover .5s forwards;
+
+            @keyframes Card-hover {
+                0% {
+                    background: none;
+                }
+
+                100% {
+                    background-color: #050003a4;
+                }
+            }
+        }
+    }
+}
+
+// ------------card-img-keyframe---------
+@keyframes Card-img {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+// -------------------Sazemandehi---------------------------
+.sazemandehi {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+// -------------------My-rightel-------------------
+.my-rightel {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div:first-child {
+        width: 100%;
+        text-align: center;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    .my-rightel-link {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid #cbc7c7;
+
+        a {
+            text-decoration: none;
+            color: #666;
+            padding: 8px 6rem;
+            margin-left: 4px;
+
+            &:hover {
+                color: #a5247a;
+                border-bottom: 2px solid #a5247a;
+            }
+        }
+
+        a:first-child {
+            color: #a5247a;
+            border-bottom: 2px solid #a5247a;
+        }
+    }
+
+    // -----------my-rightel-mobile--------------
+    .my-rightel-mobile {
+        width: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column-reverse;
+        // justify-content: center;
+        align-items: center;
+
+        div:first-child {
+            ul {
+                height: 100%;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-start;
+            }
+
+
+            svg {
+                width: 5rem;
+                background-color: #fff;
+                padding: .8rem;
+                border-radius: 50%;
+                border: 4px solid #dfdbdc;
+                color: #ec008c;
+
+                &:hover {
+                    filter: drop-shadow(1px 1px 5px #7b7a7a);
+                    transition: all .3s;
+                }
+            }
+
+            li {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            a {
+                text-decoration: none;
+                color: #666;
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .download-mobile {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-top: 2rem;
+
+        a {
+            width: 80%;
+            display: block;
+            background-color: rgb(172, 225, 93);
+            padding: .5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #fff !important;
+
+            &:hover {
+                background-color: #a5247a;
+                transition: all .2s;
+            }
+        }
+    }
+}
+
+.my-rightel-mobile-image {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    // display: none;
+
+
+    img {
+        width: 80%;
+        height: 80%;
+    }
+}
+
+// ---------------Dast-dooz-banner-----------------------
+.dast-dooz-banner {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+// -------------------main-slider-third------------
+.main-slider-third {
+    margin: auto;
+    width: 100%;
+
+    .main-slider-third-i {
+        width: 100%;
+        text-align: center;
+
+        svg {
+            width: 3.5rem;
+            color: #555;
+        }
+    }
+
+    .mySwiperThird-text {
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+
+        h6 {
+            font-size: .8rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: #111;
+            font-size: 1.3rem;
+            &:hover {
+                color: #a5247a;
+                transition: all .3s;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            color: #7b7a7a;
+            padding: 1rem;
+        }
+    }
+    .swiper-button-next {
+        color: #cbc7c7;
+        font-weight: 900;
+        display: none;
+    }
+    .swiper-button-prev {
+        @extend.swiper-button-next
     }
 }
 
@@ -528,13 +865,68 @@ main {
         padding: 2rem 0;
         height: 60vh;
     }
+
+    // -----------main-slider-second---------
+    .main-slider-second {
+        height: 20vh;
+        padding: 2rem 0;
+    }
+
+    // -----------------Card-grid----------------
+    .cards {
+        .card-grid {
+            grid-template-columns: repeat(3, 1fr);
+
+            .div:first-child {
+                border-radius: 8px;
+                display: none;
+            }
+
+            .card-text {
+                position: absolute;
+                top: 60%;
+                height: 40%;
+                background-color: #a5247ae2;
+            }
+        }
+
+        .card {
+            border-radius: 1rem;
+
+            img {
+                border-radius: .8rem;
+            }
+        }
+    }
+
+    // ---------------------My-rightel-mobile-----------------------
+    .my-rightel {
+        .my-rightel-mobile {
+            flex-direction: row-reverse;
+
+            div:first-child {
+                width: 50%;
+            }
+
+            .my-rightel-mobile-image {
+                display: flex;
+                justify-content: center;
+
+                img {
+                    width: 40%;
+                }
+            }
+        }
+    }
+    // -----------.main-slider-third------------
+    .main-slider-third {
+        width: 70%;
+        .swiper-button-next {
+            display: block;
+        } 
+    }
 }
 
-// -----------main-slider-second---------
-.main-slider-second {
-    height: 20vh;
-    padding: 2rem 0;
-}
 
 // -------------------------RESPONSIVE-------------------------
 // ------------------------min-width:968px-------------------
@@ -576,12 +968,35 @@ main {
             padding: 0 0;
         }
     }
+
     // --------main-slider-second------
     .main-slider-second {
         display: none;
     }
-// -----------.main-slider-second-query-----
+
+    // -----------.main-slider-second-query-----
     .main-slider-second-query {
         display: flex;
     }
+
+    // -----------------Card-grid----------------
+    .cards {
+        .card-grid {
+            grid-template-columns: repeat(3, 380px);
+            justify-content: center;
+
+            .card-text {
+                top: 80%;
+                height: 20%;
+                background-color: #a5247acd;
+            }
+        }
+
+        .card-hover {
+            p {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
 }

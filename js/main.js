@@ -3,6 +3,7 @@ const hambergerList = document.querySelector(".hamburger-list");
 const logoImage = document.querySelector("nav img");
 const usedark = document.querySelector(".use-dark");
 const navLi = document.querySelectorAll("nav ul > li");
+const cards = document.querySelectorAll(".card");
 // -------------Hamburger-Menu-----------------
 hamburgerMenu.addEventListener("click", e => {
     if (hamburgerMenu.classList.contains("cros-show")) {
@@ -86,5 +87,37 @@ var swiperOne = new Swiper(".mySwiper", {
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+      });
+    //  ---------------card-hover---------------
+    cards.forEach(card => {
+        card.addEventListener("mouseenter" ,e => {
+            const cardHover = e.target.children[2];
+            console.log(cardHover)
+            cardHover.style.display = "flex";
+        })
+    })
+    cards.forEach(card => {
+        card.addEventListener("mouseleave" ,e => {
+            const cardHover = e.target.children[2];
+            console.log(cardHover)
+            cardHover.style.display = "none";
+        })
+    })
+    // ----------------swiperThird---------------
+    var swiper = new Swiper(".mySwiperThird", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
